@@ -1,0 +1,81 @@
+﻿===== 起步 ===== 2018-01-10 ======================================================================
+
+项目构建
+ng new objectName
+项目启动
+ng serve -o
+项目目录
+objectName
+	-e2e	// 端到端测试
+	-node_modules
+	-src		// angular组件，模板，样式，图片等
+		-app	// 根组件
+			-xxx.css 	//组件样式
+			-xxx.html 	//组件模板
+			-xxx.spec.ts  //测试
+			-xxx.ts 	//组件类代码
+			-xxx.module.ts 		// 根模块：声明组件
+		-assets		// 存放图片、媒体文件的文件夹
+		-environments	//
+		-favicon.ico	//
+		-index.html		//
+		-main.ts 		//
+		-polyfill.ts 	// 浏览器兼容说明
+		-style.css		// 公共样式表
+		-test.ts 	// 单元测试入口
+		-tsconfig.app.json 		// 应用程序的typeScript编译器配置
+		-tsconfig.spec.json 	// 单元测试的typeScript编译器配置
+		-typings.d.ts 	//
+	-.angular-cli.json 		// Angular CLI的配置。在这个文件中，你可以设置几个默认值，并且配置你的项目建立时包含的文件
+	-.editorconfig 			// 编辑器的简单配置，以确保使用您的项目的每个人都具有相同的基本配置。
+	-.gitignore 		// Git配置，以确保自动生成的文件不承诺源控制。
+	-karma.config.js 	// 单元测试配置，运行ng测试时使用。
+	-pakage.json 		//
+	-protractor.conf.js 	// 单元测试配置，运行e2e时使用
+	-README.md 		//使用CLI命令的一些基本信息
+	-tsconfig.json 		//
+	-tslint.json 		//
+
+===== 实例 src0 ===== 2018-01-10 ======================================================================
+
+===== ===== 数据绑定 ===== =====
+
+
+===== ===== 创建组件 ===== =====
+ng generate component heroes
+
+在app目录下新增heroes文件夹
+并且创建了组件相关的4个文件
+自动在app.module.ts文件夹下面导入该组件
+
+===== @Component =====
+@Component({
+  selector: 'app-heroes',
+  templateUrl: './heroes.component.html',
+  styleUrls: ['./heroes.component.css']
+})
+装饰器
+元数据属性：
+
+===== 使用组件：显示到页面 =====
+selector: 'app-heroes'
+在页面添加标签：<app-heroes></app-heroes>
+
+===== ===== 添加类 ===== =====
+ng generate class hero
+
+在app目录下生成一个hero.ts文件
+
+===== 使用类 =====
+导入
+import {Hero} from '../hero';
+实例化
+显示
+
+===== ===== 使用angular的其它组件 ===== =====
+
+
+备注：更改.angular-cli.json文件下面的root值做文件夹的切换
+
+===== 实例 src1 ===== 2018-01-10 ======================================================================
+
