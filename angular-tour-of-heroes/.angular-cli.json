@@ -5,7 +5,7 @@
   },
   "apps": [
     {
-      "root": "src2",
+      "root": "src3",
       "outDir": "dist",
       "assets": [
         "assets",
