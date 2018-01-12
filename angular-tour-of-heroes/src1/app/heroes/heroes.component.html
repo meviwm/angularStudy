@@ -8,7 +8,22 @@
 	<input type="text" [(ngModel)]="hero.name" placeholder="name"></label>
 </div>
 <ul>
-	<li *ngFor="let item of heroes" (click)="onSelect(item)">
+	<!-- [class.selected]="item===selectedHero"
+	条件判断添加样式名selected -->
+	<li *ngFor="let item of heroes" (click)="onSelect(item)" [class.selected]="item===selectedHero">
 		<span>{{item.id}}====={{item.name}}</span>
 	</li>
 </ul>
+
+<!-- 避免selectedHero为undefined时报错 -->
+<div *ngIf="selectedHero">
+
+<!-- 显示选中的item -->
+<h2>{{selectedHero.name | uppercase}} details</h2>
+<p>id:{{selectedHero.id}}</p>
+<p>name:{{selectedHero.name}}</p>
+
+<!-- 修改name -->
+<input type="text" [(ngModel)]="selectedHero.name" name="name" placeholder="name">
+
+</div>
