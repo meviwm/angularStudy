@@ -7,3 +7,8 @@
 	<label>name:
 	<input type="text" [(ngModel)]="hero.name" placeholder="name"></label>
 </div>
+<ul>
+	<li *ngFor="let item of heroes" (click)="onSelect(item)">
+		<span>{{item.id}}====={{item.name}}</span>
+	</li>
+</ul>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 //导入类
 import {Hero} from '../hero';
+import {HEROES} from '../mock-heroes';
+
 
 @Component({
   selector: 'app-heroes',
@@ -18,6 +20,15 @@ export class HeroesComponent implements OnInit {
   	id:1,
   	name:'meme'
   };
+
+  heroes = HEROES;
+
+  selectedHero:Hero;
+
+  onSelect(hero:Hero):void{
+    this.selectedHero = hero;
+    console.log(hero);
+  }
 
   // 创建组件后立即执行的函数
   ngOnInit() {
