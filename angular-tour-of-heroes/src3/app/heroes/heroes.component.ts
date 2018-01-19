@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 //导入类
 import {Hero} from '../hero';
-import {HEROES} from '../mock-heroes';
+
+// import {HEROES} from '../mock-heroes';
+
+import {HeroService} from '../service/hero.service';
+
 
 
 @Component({
@@ -11,7 +15,7 @@ import {HEROES} from '../mock-heroes';
 })
 export class HeroesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private heroService:HeroService) { }
 
   hero1 = 'meme';
 
@@ -21,7 +25,8 @@ export class HeroesComponent implements OnInit {
   	name:'meme'
   };
 
-  heroes = HEROES;
+  // heroes = HEROES;
+  heroes:Hero[];
 
   selectedHero:Hero;
 
@@ -30,9 +35,13 @@ export class HeroesComponent implements OnInit {
     console.log(hero);
   }
 
+  getHeroes():void{
+    this.heroes = this.heroService.getHeroes();
+  }
+
   // 创建组件后立即执行的函数
   ngOnInit() {
-
+    this.getHeroes();
   }
 
 }

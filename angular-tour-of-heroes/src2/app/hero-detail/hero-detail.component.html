@@ -1,0 +1,12 @@
+<!-- 避免selectedHero为undefined时报错 -->
+<div *ngIf="hero">
+
+<!-- 显示选中的item -->
+<h2>{{hero.name | uppercase}} details</h2>
+<p>id:{{hero.id}}</p>
+<p>name:{{hero.name}}</p>
+
+<!-- 修改name -->
+<input type="text" [(ngModel)]="hero.name" name="name" placeholder="name">
+
+</div>

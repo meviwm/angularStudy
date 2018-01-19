@@ -79,3 +79,50 @@ import {Hero} from '../hero';
 
 ===== 实例 src1 ===== 2018-01-10 ======================================================================
 
+1、创建组件
+ng generate component hero-detail
+1、）创建hero-detail文件夹，并生成组件文件
+2、）在app.module.ts文件夹下面添加了
+import { HeroDetailComponent } from './hero-detail/hero-detail.component'; 
+2、组件模板
+get
+1、@Input
+2、组件之间进行数据传递
+
+===== 组件-实例 src2 ===== 2018-01-12 ======================================================================
+
+创建服务
+ng generate service hero
+
+添加--m=xxx来自动引入
+ng g service hero --m=app
+
+运行这个命令后会在app.module.ts里面自动导入
+
+ng g service hero1 --flat=false
+运行这个命令会自动生成一个目录hero1
+
+ng g service hero3 --flat=false --spec=false
+创建是不生成测试文件
+
+
+
+
+
+
+
+
+
+
+备注：若想在指定目录下创建对应的文件则需要cd到对应的目录下执行命令
+
+===== 服务-实例 src3 ===== 2018-01-12 
+
+
+
+
+
+======================================================================
+
+
+
